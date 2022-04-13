@@ -52,12 +52,12 @@
                 >
   </div>
   <div class="mb-3">
-  <label class="form-label">image</label>
+  <label class="form-label">imagename</label>
     <input
                     id="image"
                     type="text"
                     name="image"
-                    value="{{$product->image}}"
+                    value=""
                     class="form-control"
                 >
   </div>
