@@ -16,7 +16,7 @@
     <tr>
       <th scope="col">name</th>
       <th scope="col">email</th>
-      <th scope="col"></th>
+      <th scope="col">operation</th>
     </tr>
   </thead>
   <tbody>
@@ -25,8 +25,8 @@
       <td>{{$user->name}}</td>
       <td>{{$user->email}}</td>
       <td class="text-nowrap">
-            <p><a href="{{ route('edit', ['id' => $user->id]) }}" class="btn btn-outline-dark btn-sm">編集</a></p>
-            <p><a href="{{ route('delete', ['id' => $user->id]) }}" class="btn btn-outline-dark btn-sm">削除</a></p>
+      <div class="mb-3"><p><a href="{{ route('user.edit', ['id' => $user->id]) }}" class="btn btn-outline-dark btn-sm">編集</a></p></div>
+      <div><p><a href="{{ route('user.delete', ['id' => $user->id]) }}" class="btn btn-outline-dark btn-sm">削除</a></p></div>
       </td>
     </tr>
     @endforeach

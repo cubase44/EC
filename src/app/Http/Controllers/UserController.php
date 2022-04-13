@@ -15,13 +15,13 @@ class UserController extends Controller
 
     public function edit ($id) 
     {
-        $user = user::findOrFail($id);   
+        $user = User::findOrFail($id);   
         return view('user.edit')->with('user',$user);
     }
 
     public function update (Request $request, $id) 
     {
-        $user = user::findOrFail($id);
+        $user = User::findOrFail($id);
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->password = $request->input('password');
@@ -31,7 +31,7 @@ class UserController extends Controller
 
     public function delete ($id)
     {
-    $user = user::findOrFail($id);
+    $user = User::findOrFail($id);
     $user->delete(); 
     return redirect('user');
     }

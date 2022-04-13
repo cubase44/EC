@@ -12,7 +12,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                 
-                <form action="{{ route('update', $user->id) }}" enctype="multipart/form-data" method="POST" id="new">
+                <form action="{{ route('user.update', $user->id) }}" enctype="multipart/form-data" method="POST" id="new">
       @csrf
       @method('POST')
 
@@ -44,7 +44,7 @@
     <label class="form-label">password</label>
     <input
                     id="password"
-                    type="text"
+                    type="password"
                     name="password"
                     value=""
                     class="form-control"
