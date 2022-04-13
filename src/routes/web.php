@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+// 追加したルーティング
+Route::get('/user', [UserController::class, 'index']);
+Route::get('/edit/{id}', [UserController::class, 'edit'])->name('edit');
+Route::post('/update/{id}', [UserController::class, 'update'])->name('update');
+Route::get('/delete/{id}', [UserController::class, 'delete'])->name('delete');
