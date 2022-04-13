@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +40,8 @@ Route::get('/produc/edit/{id}', [ProductController::class, 'edit'])->name('produ
 Route::post('/produc/update/{id}', [ProductController::class, 'update'])->name('product.update');
 Route::get('/produc/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
 
+//  contact関連のルーティング
+Route::get('/contact', [ContactController::class, 'index']);
+Route::get('/contact/edit/{id}', [ContactController::class, 'edit'])->name('contact.edit');
+Route::post('/contact/update/{id}', [ContactController::class, 'update'])->name('contact.update');
+Route::get('/contact/delete/{id}', [ContactController::class, 'delete'])->name('contact.delete');
