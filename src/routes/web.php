@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +25,17 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-// 追加したルーティング
+// user関連のルーティング
 Route::get('/user', [UserController::class, 'index']);
-Route::get('/edit/{id}', [UserController::class, 'edit'])->name('edit');
-Route::post('/update/{id}', [UserController::class, 'update'])->name('update');
-Route::get('/delete/{id}', [UserController::class, 'delete'])->name('delete');
+Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
+Route::post('/user/update/{id}', [UserController::class, 'update'])->name('user.update');
+Route::get('/user/delete/{id}', [UserController::class, 'delete'])->name('user.delete');
+
+//  product関連のルーティング
+Route::get('/product', [ProductController::class, 'index']);
+Route::get('/produc/create', [ProductController::class, 'create'])->name('product.create');
+Route::post('/produc/store', [ProductController::class, 'store'])->name('product.store');
+Route::get('/produc/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+Route::post('/produc/update/{id}', [ProductController::class, 'update'])->name('product.update');
+Route::get('/produc/delete/{id}', [ProductController::class, 'delete'])->name('product.delete');
+

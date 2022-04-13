@@ -100,7 +100,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">商品一覧</a>
+          <a class="nav-link active" aria-current="page" href="/product">商品一覧</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">購入履歴</a>
