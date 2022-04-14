@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Update;
 
 class UserController extends Controller
 {
@@ -26,13 +27,33 @@ class UserController extends Controller
         $user->email = $request->input('email');
         $user->password = $request->input('password');
         $user->save();
+        $update=new Update;
+        $update->user_update = '1';
+        $update->user_delete = '0';
+        $update->product_create = '0';
+        $update->product_update = '0';
+        $update->product_delete = '0';
+        $update->order_delete = '0';
+        $update->contact_update = '0';
+        $update->contact_delete = '0';
+        $update->save();
         return redirect('user');
     }
 
     public function delete ($id)
     {
     $user = User::findOrFail($id);
-    $user->delete(); 
+    $user->delete();
+    $update=new Update;
+    $update->user_update = '0';
+    $update->user_delete = '1';
+    $update->product_create = '0';
+    $update->product_update = '0';
+    $update->product_delete = '0';
+    $update->order_delete = '0';
+    $update->contact_update = '0';
+    $update->contact_delete = '0';
+    $update->save();
     return redirect('user');
     }
 }

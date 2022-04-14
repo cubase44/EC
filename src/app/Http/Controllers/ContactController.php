@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Models\Update;
 
 class ContactController extends Controller
 {
@@ -26,6 +27,16 @@ class ContactController extends Controller
         $contact->name_kana = $request->input('name_kana');
         $contact->contents = $request->input('contents');
         $contact->save();
+        $update=new Update;
+        $update->user_update = '0';
+        $update->user_delete = '0';
+        $update->product_create = '0';
+        $update->product_update = '0';
+        $update->product_delete = '0';
+        $update->order_delete = '0';
+        $update->contact_update = '1';
+        $update->contact_delete = '0';
+        $update->save();
         return redirect('contact');
     }
 
@@ -33,6 +44,16 @@ class ContactController extends Controller
     {
     $contact = Contact::findOrFail($id);
     $contact->delete(); 
+    $update=new Update;
+    $update->user_update = '0';
+    $update->user_delete = '0';
+    $update->product_create = '0';
+    $update->product_update = '0';
+    $update->product_delete = '0';
+    $update->order_delete = '0';
+    $update->contact_update = '0';
+    $update->contact_delete = '1';
+    $update->save();
     return redirect('contact');
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Update;
 
 class ProductController extends Controller
 {
@@ -27,6 +28,16 @@ class ProductController extends Controller
         $product->description = $request->input('description');
         $product->image = $request->input('image');
         $product->save();
+        $update=new Update;
+        $update->user_update = '0';
+        $update->user_delete = '0';
+        $update->product_create = '1';
+        $update->product_update = '0';
+        $update->product_delete = '0';
+        $update->order_delete = '0';
+        $update->contact_update = '0';
+        $update->contact_delete = '0';    
+        $update->save();
         return redirect('product');
   }
 
@@ -46,6 +57,16 @@ class ProductController extends Controller
       $image = 'storage/' . $request->input('image').'.jpg';
       $product->image = $image;
       $product->save();
+      $update=new Update;
+      $update->user_update = '0';
+      $update->user_delete = '0';
+      $update->product_create = '0';
+      $update->product_update = '1';
+      $update->product_delete = '0';
+      $update->order_delete = '0';
+      $update->contact_update = '0';
+      $update->contact_delete = '0';  
+      $update->save();
       return redirect('product');
   }
 
@@ -53,6 +74,16 @@ class ProductController extends Controller
   {
   $product = Product::findOrFail($id);
   $product->delete(); 
+  $update=new Update;
+  $update->user_update = '0';
+  $update->user_delete = '0';
+  $update->product_create = '0';
+  $update->product_update = '0';
+  $update->product_delete = '1';
+  $update->order_delete = '0';
+  $update->contact_update = '0';
+  $update->contact_delete = '0';
+  $update->save();
   return redirect('product');
   }
 }
