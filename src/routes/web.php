@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\FrontController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +47,11 @@ Route::get('/contact', [ContactController::class, 'index']);
 Route::get('/contact/edit/{id}', [ContactController::class, 'edit'])->name('contact.edit');
 Route::post('/contact/update/{id}', [ContactController::class, 'update'])->name('contact.update');
 Route::get('/contact/delete/{id}', [ContactController::class, 'delete'])->name('contact.delete');
+
+//  order関連のルーティング
+Route::get('/order', [OrderController::class, 'index']);
+Route::get('/order/show/{id}', [OrderController::class, 'show'])->name('order.show');
+Route::get('/order/delete/{id}', [OrderController::class, 'delete'])->name('order.delete');
+
+//  front関連のルーティング
+Route::get('/front', [FrontController::class, 'index']);

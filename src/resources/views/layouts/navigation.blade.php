@@ -103,16 +103,13 @@
           <a class="nav-link active" aria-current="page" href="/product">商品一覧</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">購入履歴</a>
+          <a class="nav-link active" aria-current="page" href="/order">購入履歴</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/contact">問い合わせ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">顧客管理</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/user">設定</a>
+          <a class="nav-link active" aria-current="page" href="/user">管理者設定</a>
         </li>
       </ul>
     </div>

@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+<x-app-layout>
+    <x-slot name="header">
+        <!-- <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Dashboard') }}
+        </h2> -->
+    </x-slot>
+
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 bg-white border-b border-gray-200">
+                <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">product</th>
+      <th scope="col">name</th>
+      <th scope="col">operation</th>
+    </tr>
+  </thead>
+  <tbody>
+  @foreach($orders as $order)
+    <tr>
+      <td>{{$order->id}}</td>
+      <td>{{$order->product}}</td>
+      <td>{{$order->name}}</td>
+      <td class="text-nowrap">
+      <div class="mb-3"><p><a href="{{ route('order.show', ['id' => $order->id]) }}" class="btn btn-outline-dark btn-sm">詳細</a></p></div>
+      <div><p><a href="{{ route('order.delete', ['id' => $order->id]) }}" class="btn btn-outline-dark btn-sm">削除</a></p></div>
+      </td>
+    </tr>
+    @endforeach
+  </tbody>
+</table>
+                </div>
+            </div>
+        </div>
+    </div>
+</x-app-layout>
