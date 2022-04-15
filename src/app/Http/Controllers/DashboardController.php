@@ -9,7 +9,7 @@ class dashboardController extends Controller
 {
     public function index ()
     { 
-        $updates = Update::all();
+        $updates = Update::all()->sortByDesc("id");
         return view('dashboard')->with('updates',$updates);
     }
 }
