@@ -36,6 +36,8 @@ class UserController extends Controller
         $update->order_delete = '0';
         $update->contact_update = '0';
         $update->contact_delete = '0';
+        $update->contact_create = '0';
+        $update->order_create = '0';
         $update->save();
         return redirect('user');
     }
@@ -53,6 +55,8 @@ class UserController extends Controller
     $update->order_delete = '0';
     $update->contact_update = '0';
     $update->contact_delete = '0';
+    $update->contact_create = '0';
+    $update->order_create = '0';
     $update->save();
     return redirect('user');
     }

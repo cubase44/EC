@@ -45,9 +45,24 @@
                     <td><div class="mb-3">{{$update->created_at}}</div><div>商品情報が更新されました。</div></td>
                     </tr>
                     @endif
-                    @if($update->order_delete == '1')
+                    @if($update->product_delete == '1')
                     <tr>
                     <td><div class="mb-3">{{$update->created_at}}</div><div>商品情報が削除されました。</div></td>
+                    </tr>
+                    @endif
+                    @if($update->order_create == '1')
+                    <tr>
+                    <td><div class="mb-3">{{$update->created_at}}</div><div>購入情報が登録されました。</div></td>
+                    </tr>
+                    @endif
+                    @if($update->order_delete == '1')
+                    <tr>
+                    <td><div class="mb-3">{{$update->created_at}}</div><div>購入情報が削除されました。</div></td>
+                    </tr>
+                    @endif
+                    @if($update->contact_create == '1')
+                    <tr>
+                    <td><div class="mb-3">{{$update->created_at}}</div><div>お問い合わせ情報が登録されました。</div></td>
                     </tr>
                     @endif
                     @if($update->contact_update == '1')

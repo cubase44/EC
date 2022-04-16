@@ -36,7 +36,9 @@ class ProductController extends Controller
         $update->product_delete = '0';
         $update->order_delete = '0';
         $update->contact_update = '0';
-        $update->contact_delete = '0';    
+        $update->contact_delete = '0';
+        $update->contact_create = '0';
+        $update->order_create = '0';    
         $update->save();
         return redirect('product');
   }
@@ -65,7 +67,9 @@ class ProductController extends Controller
       $update->product_delete = '0';
       $update->order_delete = '0';
       $update->contact_update = '0';
-      $update->contact_delete = '0';  
+      $update->contact_delete = '0'; 
+      $update->contact_create = '0';
+      $update->order_create = '0'; 
       $update->save();
       return redirect('product');
   }
@@ -83,6 +87,8 @@ class ProductController extends Controller
   $update->order_delete = '0';
   $update->contact_update = '0';
   $update->contact_delete = '0';
+  $update->contact_create = '0';
+  $update->order_create = '0';
   $update->save();
   return redirect('product');
   }
