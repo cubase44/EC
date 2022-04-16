@@ -20,7 +20,9 @@ return new class extends Migration
             $table->integer('product_create');
             $table->integer('product_update');
             $table->integer('product_delete');
+            $table->integer('order_create');
             $table->integer('order_delete');
+            $table->integer('contact_create');
             $table->integer('contact_update');
             $table->integer('contact_delete');
             $table->timestamps();
