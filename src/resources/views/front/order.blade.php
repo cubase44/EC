@@ -13,7 +13,7 @@
         <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <h2 class="letterspacing20px">FinderPro</h2>
+    <h2 class="letterspacing20px"><a class="titletext" href="http://localhost/front">FinderPro</a></h2>
 </nav>
 
         </header>
@@ -176,6 +176,10 @@ height: 700px;
 
 .letterspacing20px {
     letter-spacing: 5px;
+}
+
+.titletext {
+    color: #000000;
 }
 
 .container-fluid {
