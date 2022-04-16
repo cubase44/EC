@@ -92,7 +92,7 @@
         <div class="container">
           <div class="item1">CONTACT US</div>
           <div class="item1">ご要望など弊社にご連絡ください。<br>090-1234-5678(平日9:00〜18:00)</div>
-          <div class="item3"><a href="" class="btn btn-info">お問い合せ</a></div>
+          <div class="item3"><a href="" class="btn btn-success">お問い合せ</a></div>
           <div class="item2">©️2022 FinderPro.</div>
         </div>
         </footer>
@@ -208,7 +208,7 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 150px;
-  background-color: #dcdcdc;
+  background-color: #f5f5f5;
 }
  
  
