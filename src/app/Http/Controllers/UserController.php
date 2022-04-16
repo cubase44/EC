@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Update;
+use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
@@ -20,7 +21,7 @@ class UserController extends Controller
         return view('user.edit')->with('user',$user);
     }
 
-    public function update (Request $request, $id) 
+    public function update (UserRequest $request, $id) 
     {
         $user = User::findOrFail($id);
         $user->name = $request->input('name');

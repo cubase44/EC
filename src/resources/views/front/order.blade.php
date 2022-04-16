@@ -24,6 +24,15 @@
         <!--メインビジュアル画像ここまで-->
         <!--ここからwrapperー-->
         <div id="wrapper">
+        @if ($errors->any())
+        <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+        </div>
+        @endif
         <h2>購入手続き</h2>
         <p>以下のフォームに必要事項をご記入の上で購入を押してください</p>
         <form action="{{ route('order.store', ['id' => $product->id]) }}" enctype="multipart/form-data" method="POST" id="new">
@@ -133,7 +142,8 @@
 #wrapper {
     position:relative;
 	top: 50px;
-	left:100px;
+			left:100px;
+      width: 1200px;
 }
 
 img.example1 {
@@ -231,7 +241,7 @@ body {
 }
 .footer {
   position: absolute;
-  bottom: -100px;
+  bottom: -200px;
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 150px;

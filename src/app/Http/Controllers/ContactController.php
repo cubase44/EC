@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact;
 use App\Models\Update;
+use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
@@ -19,7 +20,7 @@ class ContactController extends Controller
      return view('front.contact');
     }
 
-    public function store(Request $request)
+    public function store(ContactRequest $request)
   {
         $contact=new Contact;
         $contact->name = $request->input('name');
@@ -47,7 +48,7 @@ class ContactController extends Controller
         return view('contact.edit')->with('contact',$contact);
     }
 
-    public function update (Request $request, $id) 
+    public function update (ContactRequest $request, $id) 
     {
         $contact = Contact::findOrFail($id);
         $contact->name = $request->input('name');

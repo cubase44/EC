@@ -11,7 +11,15 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                
+                @if ($errors->any())
+        <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+        </div>
+        @endif
                 <form action="{{ route('product.store') }}" enctype="multipart/form-data" method="POST" id="new">
       @csrf
       @method('POST')
@@ -47,6 +55,16 @@
                     id="description"
                     type="text"
                     name="description"
+                    value=""
+                    class="form-control"
+                >
+  </div>
+  <div class="mb-3">
+  <label class="form-label">imagename</label>
+    <input
+                    id="image"
+                    type="text"
+                    name="image"
                     value=""
                     class="form-control"
                 >

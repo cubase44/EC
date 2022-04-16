@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Update;
+use App\Http\Requests\ProductRequest;
 
 class ProductController extends Controller
 {
@@ -20,13 +21,15 @@ class ProductController extends Controller
     return view('product.create');
    }
 
-   public function store(Request $request)
+   public function store(ProductRequest $request)
   {
         $product=new Product;
         $product->name = $request->input('name');
         $product->price = $request->input('price');
         $product->description = $request->input('description');
-        $product->image = $request->input('image');
+        $request->file('file')->storeAs('public',$request->input('image').'.jpg');
+        $image = 'storage/' . $request->input('image').'.jpg';
+        $product->image = $image;
         $product->save();
         $update=new Update;
         $update->user_update = '0';
@@ -49,7 +52,7 @@ class ProductController extends Controller
       return view('product.edit')->with('product',$product);
   }
 
-  public function update (Request $request, $id) 
+  public function update (ProductRequest $request, $id) 
   {
       $product = Product::findOrFail($id);
       $product->name = $request->input('name');

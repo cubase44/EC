@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Update;
 use App\Models\Product;
+use App\Http\Requests\OrderRequest;
 
 class OrderController extends Controller
 {
@@ -21,7 +22,7 @@ class OrderController extends Controller
      return view('front.order')->with('product',$product);
     }
  
-    public function store(Request $request,$id)
+    public function store(OrderRequest $request,$id)
    {
          $order=new Order;
          $order->product = $id;
