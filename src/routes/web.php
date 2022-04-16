@@ -44,12 +44,17 @@ Route::get('/produc/delete/{id}', [ProductController::class, 'delete'])->name('p
 
 //  contact関連のルーティング
 Route::get('/contact', [ContactController::class, 'index']);
+Route::get('/contact/create', [ContactController::class, 'create'])->name('contact.create');
+Route::post('/contact/store', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/contact/edit/{id}', [ContactController::class, 'edit'])->name('contact.edit');
 Route::post('/contact/update/{id}', [ContactController::class, 'update'])->name('contact.update');
 Route::get('/contact/delete/{id}', [ContactController::class, 'delete'])->name('contact.delete');
 
 //  order関連のルーティング
 Route::get('/order', [OrderController::class, 'index']);
+Route::get('/order/create/{id}', [OrderController::class, 'create'])->name('order.create');
+Route::post('/order/store/{id}', [OrderController::class, 'store'])->name('order.store');
+Route::get('/order/edit/{id}', [OrderController::class, 'edit'])->name('order.edit');
 Route::get('/order/show/{id}', [OrderController::class, 'show'])->name('order.show');
 Route::get('/order/delete/{id}', [OrderController::class, 'delete'])->name('order.delete');
 
