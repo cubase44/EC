@@ -21,6 +21,7 @@
         <!--ここからメインビジュアル画像-->
         <div id="main_visual">
         <img class="example2" src="{{ asset('img/mainimage.jpeg') }}">
+        <!-- <div class="product">FinderProでその一瞬を収める</div> -->
         </div>
         <!--メインビジュアル画像ここまで-->
         <!--ここからwrapperー-->
@@ -164,4 +165,26 @@ body {
 .container .text-muted {
   margin: 20px 0;
 }
+
+.product{
+  /* animation: SlideIn 5.0s infinite; */
+    position: absolute;
+    top:15%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    font-size:30px;
+    color: white;
+}
+
+/* CSSアニメーションの設定 */
+/* @keyframes SlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(64px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+} */
 </style>
