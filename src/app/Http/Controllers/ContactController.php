@@ -62,9 +62,9 @@ class ContactController extends Controller
         $update->product_update = '0';
         $update->product_delete = '0';
         $update->order_delete = '0';
-        $update->contact_update = '0';
+        $update->contact_update = '1';
         $update->contact_delete = '0';
-        $update->contact_create = '1';
+        $update->contact_create = '0';
         $update->order_create = '0';
         $update->save();
         return redirect('contact');
