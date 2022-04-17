@@ -103,11 +103,11 @@
     <tr>
       <td>支払い方法</td>
       <td><dd id="form_select">
-            <input type="checkbox" name="card" value="1" id="card1" class="checkbox01" /><label
+            <input type="checkbox" name="card" value="VISAカードでのお支払い" id="card1" class="checkbox01" /><label
                 for="card1"
                 >VISAカードでのお支払い</label
             ><br />
-            <input type="checkbox" name="card" value="2"  id="card2" class="checkbox01" /><label
+            <input type="checkbox" name="card" value="MASTERカードでのお支払い"  id="card2" class="checkbox01" /><label
                 for="card2"
                 >MASTERカードでのお支払い</label
             ><br />
